@@ -15,7 +15,7 @@ Målet med denne oppgaven er å utvikle en enkel applikasjon hvor brukere kan en
 - Lag datamodell ved bruk av DrawSQL
 - Lag skisse av app ved bruk av Figma som designverktøy
 - Lag et "Budsjett Register" med oversikt over Budsjetter
-- Lag en visnings app med mulighet for nytt budsjett, redigere og slette transaksjoner (om det er ditt budsjett).
+- I hoved visningen ( registeret ) skal det være mulig og opprette nytt budsjett, redigere og slette transaksjoner (om det er ditt budsjett).
   
 ## Sjekkliste ekstrafunksjonalitet:
 - Sortering på pris
@@ -39,14 +39,25 @@ Målet med denne oppgaven er å utvikle en enkel applikasjon hvor brukere kan en
 
 ## Skisse:
 ### Data model:
-![Data model]()
+<img width="1863" height="878" alt="skissedatamodell" src="https://github.com/user-attachments/assets/e0040529-7acf-4b30-b90f-92943448d160" />
 
-- test
+- **Universal Columns**: Standard kolonner som kommer i alle Omega365 CTP tabeller.
+- **Persons**: En system tabell som kommer ferdig definert i et Omega365 instans, har en rad per bruker i systemet og lagrer diverse metadata som navn, epost etc.
+- **OrgUnits**: En system tabell som kommer ferdig definert i et Omega365 instans, hjelper med tilgangsfordeling.
+- **Rolle / Modul tabeller**: De er system tabeller som kommer ferdig definert i et Omega365 instans, disse blir brukt for tilgangsstyring.
+- **Currencies**: En system tabell som kommer ferdig definert i et Omega365 instans, brukt for å lagre ned forskjellige valutaer.
+- **Budgets**: En tabell som lagrer alle budsjettene du oppretter.
+- **Transactions**: En tabell som lagrer alle transaksjonene som skjer på budskjettet du har oprettet.
+- **Transaction Categories**: En tabell som lagrer Transaction Kategorier.
+
 ### Grov skisse:
-![Grov skisse]()
+<img width="2331" height="1444" alt="grovskisse2" src="https://github.com/user-attachments/assets/e9206869-2af3-4be4-89e1-14bbc033b2af" />
 
-- test
-
+- Bildet på toppen til venstre er hoved register bilde som lar deg opprette budskjetter redigere budsjette og opprette transaksjoner.
+- Bildet på bunn venstre er hvordan modalen til New Budget omtrent kommer til og se ut.
+- Bildet på bunn høyre er hvordan modalen til New Transaction omtrent kommer til og se ut.
+- Bildet til top høyre viser hvordan register gridden kommer til og se ut når den kollapser seg og da vil det komme flere kolonner inn med mer informasjon ang budsjette som gjør det lettere og få et raskt overblikk over alle budsjettene man har opprettet.
+  
 ## Tidsskjema:
 <details>
   <summary>
@@ -54,8 +65,7 @@ Målet med denne oppgaven er å utvikle en enkel applikasjon hvor brukere kan en
   </summary>
   <ul>
     <li> Gjennomgang fagprøve - 1t </li>
-    <li> Lage datamodell, layout og skrive plandokument - 5t </li>
-    <li> Begynne og lage tabeller og begynne med og legge til standard sikkerhet på de - 1.25t </li>
+    <li> Lage datamodell, layout og skrive plandokument - 6.25t </li>
     <li> Logging - 0.25t </li>
     <li> Levere plan - Før 17:00</li>
   </ul>
@@ -92,7 +102,7 @@ Målet med denne oppgaven er å utvikle en enkel applikasjon hvor brukere kan en
     Tirsdag <sub>10/02</sub>
   </summary>
   <ul>
-    <li>Fullføre appene sin kjernefunksjonalitet (med forbehold om endring fra fagprøvenemnden) og beynne vurdering av ekstrafunksjonalitet - 7.25t</li>
+    <li>Fullføre appene sin kjernefunksjonalitet og beynne vurdering av ekstrafunksjonalitet - 7.25t</li>
     <li>Logging - 0.25t</li>
   </ul>
 </details>
@@ -101,7 +111,7 @@ Målet med denne oppgaven er å utvikle en enkel applikasjon hvor brukere kan en
     Onsdag <sub>11/02</sub>
   </summary>
   <ul>
-    <li>Fullføre appene sin kjernefunksjonalitet og vurdere ekstrafunksjonalitet - 7.25t</li>
+    <li>Fullføre appene sin kjernefunksjonalitet og implementere ekstrafunksjonalitet - 7.25t</li>
     <li>Logging - 0.25t</li>
   </ul>
 </details>
@@ -126,20 +136,11 @@ Målet med denne oppgaven er å utvikle en enkel applikasjon hvor brukere kan en
 </details>
 
 ## Teknologi:
-<!-- <details>
-  <summary>
-      Omega 365 CTP (Core Technology Platform) 
-  </summary>
-  <ul>
-    <li> Jeg har valgt Omega 365-rammeverket som er mest kjent som Appframe for å bygge applikasjonen. Det som gjør Appframe så bra er at det rammeverket håndterer mye av SQL og sikkerhetsfunksjonaliteten noe som gjør det mye mer effektivt og sikrere og utvikle raskt. Omega 365 bruker SQL for databehandling, data lagring og oppbygning av tilgangsstyring. Appframe håndterer alt som har med å få data fra SQL serveren til frontend. Det som gjør Appframe enda bedre er at det har masse innebygs funksjonalitet som diverse utviklerverktøy, innebygde tabeller og innebygd sikkerhetsstyring </li>
-    <li>Presentere løsning for sensor og prøvenemd</li>
-  </ul>
-</details> -->
 
 - Omega 365 CTP (Core Technology Platform)
   - Jeg har valgt Omega 365-rammeverket som er mest kjent som Appframe for å bygge applikasjonen. Det som gjør Appframe så bra er at det rammeverket håndterer mye av SQL og sikkerhetsfunksjonaliteten noe som gjør det mye mer effektivt og sikrere og utvikle raskt. Omega 365 bruker SQL for databehandling, data lagring og oppbygning av tilgangsstyring. Appframe håndterer alt som har med å få data fra SQL serveren til frontend. Det som gjør Appframe enda bedre er at det har masse innebygs funksjonalitet som diverse utviklerverktøy, innebygde tabeller og innebygd sikkerhetsstyring
-  - VueJS 3
-  - Bootstrap 5.3
+  - VueJS 
+  - Bootstrap 
   - Microsoft SQL Server
 - GitHub
   - For dokumentasjon som er lett å dele med andre
@@ -153,13 +154,12 @@ Målet med denne oppgaven er å utvikle en enkel applikasjon hvor brukere kan en
 ## Kostnader:
 - Timerate lærling: 161,-
   - Estimert total pris lærling: 6 arbeidsdager * 7.5 timer * 161 = 7 245,-
-- Basic Omega 365 Instans per måned:
-  - Hosting: ,-
-  - Lisens: ,-
-  - Kost per bruker: ,-
-- Estimert total pris: ,- +  * antall brukere
+
+- Estimert pris for meg som utvikler - tilgang til SQL og Web = 12 000,-
 
 ## Kilder:
-- Vidar Nordnes (diktator)
+- Vidar Nordnes (Sjef)
 - Tor Halvorsen Aasheim (faglig leder)
+- Arie Stensland Haugen (Kollega)
 - [ChatGPT](https://chatgpt.com)
+- [OmegaDocs](https://docs.omega365.com/?AreaType=10001&Area-ID=10004)
