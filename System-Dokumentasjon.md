@@ -27,6 +27,7 @@ Dette er systemdokumentasjonen til fagprøve oppgaven min som er å lage en Utgi
         <li>Microsoft SQL Server</li>
         <li>Vue.js 3</li>
         <li>Bootstrap 5.3</li>
+        <li>HighCharts</li>
     </ul>
 </details>
 <details>
