@@ -27,5 +27,4 @@ I dag har jeg planlagt datamodell og app layout. Jeg har skrevet plandokumentet 
 <summary>Torsdag <sub>12/02</sub></summary>
 I dag har jeg skrevet systemdokumentasjon, brukerdokumentasjon, test rapport og logg. 
 </details>
-<details open>
 
